@@ -1,0 +1,24 @@
+{
+  "name": "eeo-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jshint": "^2.11.1",
+    "meetup-api": "^1.4.39"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dare2d-dev/eeo-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dare2d-dev/eeo-poc/issues"
+  },
+  "homepage": "https://github.com/Dare2d-dev/eeo-poc#readme"
+}
