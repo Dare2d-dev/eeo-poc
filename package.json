@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
     "jshint": "^2.11.1",
     "meetup-api": "^1.4.39"
   },
