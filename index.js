@@ -1,7 +1,9 @@
 const endpoints = require('./endpoints.json');
+const fetch = require('node-fetch');
+
 const meetupConsumer = {
-  key: "lv1rnttre7ec655ugj0kn6abav",
-  secret: "b6hseeqq1tljtpaumq8iv1t0th"
+  "access_token": "edce51d5b18371df5c900482682b52d3",
+  "refresh_token": "046d57e0d9f218e1de34670645b5cb80", 
 };
 const secureURL = "https://secure.meetup.com/oauth2";
 const urls = {
@@ -13,8 +15,42 @@ const urls = {
 const express = require('express');
 const app = express();
 
+app.listen()
+
+app.listen(8080, () => {
+  console.log("port 8080");
+})
+
 app.get('/',(req,res)=>{
 
+
+
+  const headers = new fetch.Headers(
+    {
+      'Authorization':`Bearer ${meetupConsumer.access_token}`,  
+      "content-type": "application/json", 
+    });
+
+    const params = new URLSearchParams({
+      fields: 'answers',
+      sign: true,
+      'photo-host': 'public',
+      page: 20
+    });
+
+  const request = fetch('https://api.meetup.com/EndavaArgentinaRosario/events/264083608/attendance?fields=answers&&sign=true&photo-host=public&page=20',
+  {
+    method: 'GET',
+    headers: headers,
+    //params: params
+  })
+  .then(res => res.text())
+  .then(body => {res.send(body)})
+  .catch((error) => {
+    console.log(error);
+  })
+
+    
 
 });
 
@@ -25,7 +61,7 @@ app.get('/oauth2',(req,res)=>{
 
 
 
-console.log(endpoints);
+//console.log(endpoints);
 
 
 
